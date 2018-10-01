@@ -1,0 +1,19 @@
+{
+    "name": "damien/quete_simple_mvc",
+    "authors": [
+        {
+            "name": "Damien Bournac",
+            "email": "damienbournac@gmail.com"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+      "psr-4": {
+        "": "src/"
+    }
+  }
+}
+
+
+
