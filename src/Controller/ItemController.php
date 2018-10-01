@@ -10,8 +10,6 @@ use Model;
 
 
 
-$itemManager = new \Model\ItemManager();
-$items = $itemManager->selectAllItems();
 
 
 class ItemController
@@ -19,7 +17,9 @@ class ItemController
 
     public function index()
     {
-
+        $itemManager = new \Model\ItemManager();
+        $items = $itemManager->selectAllItems();
+        return $items;
 
 
     }
