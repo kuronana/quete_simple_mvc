@@ -3,9 +3,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Controller;
+require __DIR__ . '/../app/dispatcher.php';
 
-$itemController = new \Controller\ItemController();
-echo $itemController -> index();
+
+$route = $_GET['route'] ?? '';
+
+
 //...
 ?>

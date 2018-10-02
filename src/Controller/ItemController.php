@@ -3,7 +3,6 @@
 namespace Controller;
 
 // src/Controller/ItemController.php
-use Model;
 
 
 
@@ -23,6 +22,15 @@ class ItemController
 
 
     }
+
+    public function show(int $id)
+    {
+        $itemManager = new \Model\ItemManager();
+        $item = $itemManager->selectOneItem($id);
+
+        require __DIR__ . '/../View/showItem.php';
+    }
+
 }
 
 
