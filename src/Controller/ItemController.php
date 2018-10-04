@@ -10,6 +10,13 @@ class ItemController
         require __DIR__.'/../View/item.php';
         return $items;
     }
+    public function show(int $id)
+    {
+        $itemManager = new Model\ItemManager();
+        $item = $itemManager->selectOneItem($id);
+        require __DIR__ . '/../View/showItem.php';
+        return $item;
+    }
 
 }
 
