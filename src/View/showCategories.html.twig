@@ -1,0 +1,18 @@
+
+{% extends 'layout.html.twig' %}
+
+{% block title %}une seule catégorie{% endblock %}
+
+{% block content %}
+    <section>
+        <main>
+            <h1>{{ categories.title }}</h1>
+            <ul>
+                <li>Id : {{ categories.id }}</li>
+            </ul>
+            <a href='/'>Back to list</a>
+        </main>
+    </section>
+
+{% endblock %}
+

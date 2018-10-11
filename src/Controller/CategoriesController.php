@@ -2,24 +2,36 @@
 
 namespace Controller;
 
-// src/Controller/ItemController.php
-use Model;
+// src/Controller/CategoriesController.php
+
+use Model\CategoriesManager;
 
 
-
-
+use Twig_Loader_Filesystem;
+use Twig_Environment;
 
 
 
 class CategoriesController
 {
+    private $twig;
+
+    public function __construct()
+    {
+        $loader = new Twig_Loader_Filesystem(__DIR__.'/../View');
+        $this->twig = new Twig_Environment($loader);
+    }
+
+
 
     public function index()
     {
 
-        $categorieManager = new \Model\CategoriesManager();
+        $categorieManager = new CategoriesManager();
         $categories = $categorieManager->selectAllCategories();
-        require __DIR__ . '/../View/categories.php';
+
+        return $this->twig->render('categories.html.twig', ['categories' => $categories]);
+
 
 
     }
@@ -29,7 +41,8 @@ class CategoriesController
         $categorieManager = new \Model\CategoriesManager();
         $categorie = $categorieManager->selectOneCategorie($id);
 
-        require __DIR__ . '/../View/showCategories.php';
+        return $this->twig->render('showCategories.html.twig', ['categories' => $categorie]);
+
     }
 
 }
