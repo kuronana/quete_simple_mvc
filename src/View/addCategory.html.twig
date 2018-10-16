@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}add category{% endblock %}
+
+{% block content %}
+
+    <form action="" method="post">
+
+        <h1>Add a category</h1>
+        <input type="text" name="title">
+        <button type="submit" value="Envoyer" name="submit">Envoyer</button>
+    </form>
+
+    <a href='/categories'>Back to list</a>
+
+{% endblock %}

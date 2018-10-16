@@ -7,9 +7,10 @@
     <h1>Les items de la liste</h1>
     <ul>
         {% for item in items %}
-            <li>{{ item.title }}</li>
+            <li>{{ item.title }}<a href="/itemEdit/{{ item.id }}" class="btn btn-info">Editer</a> <a href="/itemDelete/{{ item.id }} " class="btn btn-danger">Delete</a> </li>
         {% endfor %}
     </ul>
 </section>
 
+<a href="/items/add">Ajouter un item</a>
 {% endblock %}

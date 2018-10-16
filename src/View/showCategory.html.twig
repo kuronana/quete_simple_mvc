@@ -6,11 +6,11 @@
 {% block content %}
     <section>
         <main>
-            <h1>{{ categories.title }}</h1>
+            <h1>Category N°{{ category.id }}</h1>
             <ul>
-                <li>Id : {{ categories.id }}</li>
+                <li>{{ category.name }}</li> <a href="/categoryEdit">Edit</a>
             </ul>
-            <a href='/'>Back to list</a>
+            <a href='/categories'>Back to list</a>
         </main>
     </section>
 

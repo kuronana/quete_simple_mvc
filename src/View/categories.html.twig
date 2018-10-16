@@ -1,17 +1,19 @@
 
 {% extends 'layout.html.twig' %}
 
-{% block title %}Titre Catégories{% endblock %}
+{% block title %}Title Catégories{% endblock %}
 
 {% block content %}
 <section>
     <h1>Les catégories</h1>
     <ul>
         {% for categorie in categories %}
-        <li>{{ categorie.title }}</li>
+        <li>{{ categorie.name }} <a href="/categoryEdit/{{ categorie.id }}" class="btn btn-info">Editer</a><a href="/categoryDelete/{{ categorie.id }}" class="btn btn-danger">Delete</a></li>
         {% endfor %}
     </ul>
 </section>
+
+<a href="/categoryAdd">Ajouter une catégorie</a>
 
 {% endblock %}
 
